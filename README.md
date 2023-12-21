@@ -33,23 +33,24 @@ There are three topics of data:
 <img src = "CloudPinterestPipeline.jpeg" width = "600" height = "430" />
 
 ## Structure of the Project
-pinterest-data-pipeline/
-├─ CloudPinterestPipeline.jpeg
-│  An overview of the data pipeline architecture
-├─ data_emulation/
-│  ├─ user_posting_emulation.py
-│  │  Python scripts for connecting to database and emulate data to Kafka topics using API Invoke URL
-│  └─ user_posting_emulation_streaming.py
-│     Python scripts for connecting to database and emulate stream data into Kinesis Streams
-├─ databricks/
-│  ├─ Batch_Data_Processing_and_Queries.ipynb
-│  │  Python scripts in notebook for ingesting, cleaning, and making queries batch data from AWS S3
-│  ├─ Steaming_Data_Processing.ipynb
-│  │  Python scripts in notebook for ingesting and cleaning stream data from AWS Kinesis
-├─ 0a5e6ec37a2f_dag.py
-│  DAG file uploaded to Airflow for running Databricks notebook
-└─ README.md
-
+<pre>
+<b>pinterest-data-pipeline/</b>
+├─ <b>CloudPinterestPipeline.jpeg/</b>
+│  <i>An overview of the data pipeline architecture/</i>
+├─ <b>data_emulation</b>
+│  ├─ <b>user_posting_emulation.py</b>
+│  │  <i>Python scripts for connecting to database and emulate data to Kafka topics using API Invoke URL</i>
+│  └─ <b>user_posting_emulation_streaming.py<b>
+│     <i>Python scripts for connecting to database and emulate stream data into Kinesis Streams</i>
+├─ <b>databricks/</b>
+│  ├─ <b>Batch_Data_Processing_and_Queries.ipynb<b>
+│  │  <i>Python scripts in notebook for ingesting, cleaning, and making queries batch data from AWS S3</i>
+│  └─ <b>Steaming_Data_Processing.ipynb<b>
+│     <i>Python scripts in notebook for ingesting and cleaning stream data from AWS Kinesis</i>
+├─ <b>0a5e6ec37a2f_dag.py</b>
+│  <i>DAG file uploaded to Airflow for running Databricks notebook</i>
+└─ <b>README.md</b>
+</pre>
 
 ##    How to install? <a name="install"></a>
 Clone [this project](https://github.com/verbonbon/multinational-retail-data-centralisation)<br/>  
@@ -58,8 +59,9 @@ Clone [this project](https://github.com/verbonbon/multinational-retail-data-cent
 MIT <br/>
 
 ##    What I have learned <a name="learned"></a>
-The key lesson is that data cleaning constituted the bulk of the data processing work.<br/>
-Doing a thorough inspection and data cleaning early on<br/>
-will save time on the SQL database schema creation in later stages. <br/>
-There were multiple times that I had to go back to resolve data cleaning issues,<br/>
-because the dataframes would not link up across the dataframes.<br/>
+For the multiple components of AWS to work together to build a smooth data pipeline,<br/>
+it is essential to have a clear naming system for the key topics and associated files.<br/>
+It is also a good idea to get familiar with the data in a smaller batch at first, <br/>
+to test run the codes and to build script for cleaning the data. <br/>
+I also like to thank the amazing AICore support engineers,<br/>
+for their help and patience!<br/>
