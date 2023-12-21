@@ -30,7 +30,7 @@ There are three topics of data:
 - AWS MWAA
 - AWS Kinesis
 
-<img src = "CloudPinterestPipeline.jpg" width = "600" height = "430" />
+<img src = "CloudPinterestPipeline.jpeg" width = "600" height = "430" />
 
 ## Structure of the Project
 pinterest-data-pipeline/
