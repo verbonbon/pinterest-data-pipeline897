@@ -59,7 +59,7 @@ Clone [this project](https://github.com/verbonbon/multinational-retail-data-cent
 MIT <br/>
 
 ##    What I have learned <a name="learned"></a>
-For the multiple components of AWS to work together to build a smooth data pipeline,<br/>
+For the multiple components of AWS to work together and build a smooth data pipeline,<br/>
 it is essential to have a clear naming system for the key topics and associated files.<br/>
 It is also a good idea to get familiar with the data in a smaller batch at first, <br/>
 to test run the codes and to build script for cleaning the data. <br/>
