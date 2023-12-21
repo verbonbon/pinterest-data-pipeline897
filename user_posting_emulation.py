@@ -7,9 +7,6 @@ import sqlalchemy
 from sqlalchemy import text
 from sqlalchemy import create_engine
 import json
-from time import sleep
-import random
-from multiprocessing import Process
 import boto3
 import datetime
 
@@ -67,7 +64,8 @@ def datetime_converter(date_time):
 
 
 def data_emulation(engine):
-    """This connects to the database and emulate data to Kafka topics using API Invoke URL.
+    """This connects to the database and emulate data to Kafka topics
+    using API Invoke URL.
     The data is sent from three tables to their corresponding Kafka topic:
     - pin: for the Pinterest posts data
     - geo: for the post geolocation data
@@ -89,13 +87,14 @@ def data_emulation(engine):
             for table_name, topic in tablenames_topics.items():
                 query_string = sqlalchemy.text(f"SELECT * FROM {table_name} LIMIT {random_row}, 1")
                 selected_row = connection.execute(query_string)
-                invoke_url=f"https://bj0k1iog5m.execute-api.us-east-1.amazonaws.com/production/{topic}"
+                invoke_url = f"https://bj0k1iog5m.execute-api.us-east-1.amazonaws.com/production/topics/{topic}"
                 for row in selected_row:
                     result = dict(row._mapping)
                     payload = json.dumps({"records": [{"value": result}]},
                                          default=datetime_converter)
                     response = requests.request("POST", invoke_url,
                                                 headers=headers, data=payload)
+                print(response.status_code)
 
 
 new_connector = AWSDBConnector()

@@ -72,7 +72,7 @@ def data_emulation_streaming(engine):
             """
             sleep(random.randrange(0, 2))
             random_row = random.randint(0, 11000)
-            headers = {'Content-Type': 'application/vnd.kafka.json.v2+json'}
+            headers = {'Content-Type': 'application/json'}
 
             with engine.connect() as connection:
                 tablenames_streams = {'pinterest_data':
