@@ -51,8 +51,9 @@ def datetime_converter(date_time):
 
 def data_emulation_streaming(engine):
     """
-    This connects to the database and emulate data to kafka topics
-    using API Invoke URL.
+    This creates connection to the database to emulate randomly
+    generated data into Kinesis Streams
+    
     The streaming data is sent from three tables to their corresponding topic:
     - pin: for the Pinterest posts data
     - geo: for the post geolocation data
@@ -66,10 +67,6 @@ def data_emulation_streaming(engine):
     with engine.connect() as connection:
 
         while True:
-            """
-            This creates connection to the database to emulate randomly
-            generated data into Kinesis Streams
-            """
             sleep(random.randrange(0, 2))
             random_row = random.randint(0, 11000)
             headers = {'Content-Type': 'application/json'}
